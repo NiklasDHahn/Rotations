@@ -13,8 +13,8 @@ for i in range(10):
     x_list.append(test_vector[0])
     y_list.append(test_vector[1])
     
-    tr = Rotations(test_vector)
-    rotated = tr.axes_rotation_2d(rotation_angle)
+    tr = Rotations()
+    rotated = tr.uniform_rotation_2d(test_vector, rotation_angle)
     x_list_rotated.append(rotated[0])
     y_list_rotated.append(rotated[1])
     
