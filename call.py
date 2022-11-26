@@ -7,6 +7,6 @@ rotation_angle = 90.
 
 tr = Rotations(test_vector)
 
-rotated = tr.rotation_2d_origin(angle=rotation_angle)
+rotated = tr.rotation_2d(angle=rotation_angle)
 
-test_2d_rotation = test_2d_rot(rotated)
+print(rotated)

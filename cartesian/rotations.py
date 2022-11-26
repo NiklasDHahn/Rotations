@@ -6,8 +6,8 @@ class Rotations():
         self.vec = vec
         
     
-    def rotation_2d_origin(self, angle: float) -> np.ndarray:
-        assert len(self.vec) == 2, f"Array of length {len(self.vec)} was provided for 2d roation."
+    def rotation_2d(self, angle: float) -> np.ndarray:
+        assert self.vec.shape == (2,), f"Expected array of shape (2,) but was given {self.vec.shape} instead."
         # Convert from degrees to radians
         angle = angle * math.pi / 180.
         
