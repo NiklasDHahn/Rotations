@@ -1,12 +1,25 @@
 import numpy as np
 from cartesian.rotations import Rotations
-from test.test_2d_func import test_2d_rot
+import random
+from plots.plot_2d import plot_2d_rotated_coords
 
-test_vector = np.array([7,7])
-rotation_angle = 90.
+x_list, y_list = [], []
+x_list_rotated, y_list_rotated = [], []
+rotations = []
+for i in range(10):
+    test_vector = np.random.rand(2,) * 10
+    rotation_angle = random.uniform(0,360)
+    rotations.append(rotation_angle)
+    x_list.append(test_vector[0])
+    y_list.append(test_vector[1])
+    
+    tr = Rotations(test_vector)
+    rotated = tr.axes_rotation_2d(rotation_angle)
+    x_list_rotated.append(rotated[0])
+    y_list_rotated.append(rotated[1])
+    
+x_before, y_before = np.array(x_list), np.array(y_list)
+x_after, y_after = np.array(x_list_rotated), np.array(y_list_rotated)
 
-tr = Rotations(test_vector)
-
-rotated = tr.rotation_2d(angle=rotation_angle)
-
-print(rotated)
+plot_2d_rotated_coords(x_before, y_before, x_after, y_after)
+print(rotations)

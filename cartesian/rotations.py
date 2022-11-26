@@ -6,7 +6,7 @@ class Rotations():
         self.vec = vec
         
     
-    def rotation_2d(self, angle: float) -> np.ndarray:
+    def axes_rotation_2d(self, angle: float) -> np.ndarray:
         assert self.vec.shape == (2,), f"Expected array of shape (2,) but was given {self.vec.shape} instead."
         # Convert from degrees to radians
         angle = angle * math.pi / 180.
