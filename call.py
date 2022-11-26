@@ -3,6 +3,8 @@ from cartesian.rotations import Rotations
 import random
 from plots.plot_2d import plot_2d_rotated_coords
 
+
+tr = Rotations()
 x_list, y_list = [], []
 x_list_rotated, y_list_rotated = [], []
 rotations = []
@@ -13,7 +15,6 @@ for i in range(10):
     x_list.append(test_vector[0])
     y_list.append(test_vector[1])
     
-    tr = Rotations()
     rotated = tr.uniform_rotation_2d(test_vector, rotation_angle)
     x_list_rotated.append(rotated[0])
     y_list_rotated.append(rotated[1])
